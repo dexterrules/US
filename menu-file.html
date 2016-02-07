@@ -1,153 +1,364 @@
-/*----- Toggle Button -----*/
-.toggle-nav {
-    display:none;
-}
- 
-/*----- Menu -----*/
-@media screen and (min-width: 860px) {
-    .menu {
-        width:100%;
-        padding:10px 18px;
-        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-        border-radius:3px;
-        background:#303030;
-    }
-}
- 
-.menu ul {
-    display:inline-block;
-}
- 
-.menu li {
-    margin:0px 50px 0px 0px;
-    float:left;
-    list-style:none;
-    font-size:17px;
-}
- 
-.menu li:last-child {
-    margin-right:0px;
-}
- 
-.menu a {
-    text-shadow:0px 1px 0px rgba(0,0,0,0.5);
-    color:#777;
-    transition:color linear 0.15s;
-}
- 
-.menu a:hover, .menu .current-item a {
-    text-decoration:none;
-    color:#66a992;
-}
- 
-/*----- Search -----*/
-.search-form {
-    float:right;
-    display:inline-block;
-}
- 
-.search-form input {
-    width:200px;
-    height:30px;
-    padding:0px 8px;
-    float:left;
-    border-radius:2px 0px 0px 2px;
-    font-size:13px;
-}
- 
-.search-form button {
-    height:30px;
-    padding:0px 7px;
-    float:right;
-    border-radius:0px 2px 2px 0px;
-    background:#66a992;
-    font-size:13px;
-    font-weight:600;
-    text-shadow:0px 1px 0px rgba(0,0,0,0.3);
-    color:#fff;
-}
- 
-/*----- Responsive -----*/
-@media screen and (max-width: 1150px) {
-    .wrap {
-        width:90%;
-    }
-}
- 
-@media screen and (max-width: 970px) {
-    .search-form input {
-        width:120px;
-    }
-}
- 
-@media screen and (max-width: 860px) {
-    .menu {
-        position:relative;
-        display:inline-block;
-    }
- 
-    .menu ul.active {
-        display:none;
-    }
- 
-    .menu ul {
-        width:100%;
-        position:absolute;
-        top:120%;
-        left:0px;
-        padding:10px 18px;
-        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-        border-radius:3px;
-        background:#303030;
-    }
- 
-    .menu ul:after {
-        width:0px;
-        height:0px;
-        position:absolute;
-        top:0%;
-        left:22px;
-        content:'';
-        transform:translate(0%, -100%);
-        border-left:7px solid transparent;
-        border-right:7px solid transparent;
-        border-bottom:7px solid #303030;
-    }
- 
-    .menu li {
-        margin:5px 0px 5px 0px;
-        float:none;
-        display:block;
-    }
- 
-    .menu a {
-        display:block;
-    }
- 
-    .toggle-nav {
-        padding:20px;
-        float:left;
-        display:inline-block;
-        box-shadow:0px 1px 1px rgba(0,0,0,0.15);
-        border-radius:3px;
-        background:#303030;
-        text-shadow:0px 1px 0px rgba(0,0,0,0.5);
-        color:#777;
-        font-size:20px;
-        transition:color linear 0.15s;
-    }
- 
-    .toggle-nav:hover, .toggle-nav.active {
-        text-decoration:none;
-        color:#66a992;
-    }
- 
-    .search-form {
-        margin:12px 0px 0px 20px;
-        float:left;
-    }
- 
-    .search-form input {
-        box-shadow:-1px 1px 2px rgba(0,0,0,0.1);
-    }
-}
+
+<!DOCTYPE html>
+<html class="full" lang="en">
+
+<head>
+    <!-- google font - open sans added below-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="UX Portfolio" content="resume and portfolio">
+    <meta name="Ridhima Gupta" content="Portfolio">
+
+    <title>Ridhima Gupta | UX Designer</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Flex Slider -->
+    <link rel="stylesheet" href="flexslider.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="jquery.flexslider.js"></script>
+
+    <!-- Flex Slider JS -->
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('.flexslider').flexslider({
+          animation: "slide",
+          controlsContainer: ".flex-container"
+        });
+        });
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<!--===================Accesibility features included=====================-->
+
+                    <!--Added Landmarks on each section-->
+                    <!--Included Alt text on each image-->
+                    <!--Enhanced focus indicator(CSS)-->
+                    <!--Avoid ambigious buttons-->
+                    <!--Headings in H1 tag-->
+
+<!--=======================================================================-->
+
+<!--===================Bootstrap features included=====================-->
+
+                    <!--Bootstrap line seperator used-->
+                    <!-- bootstrap button used-->
+                    <!-- Bootstrap full bleed responsive image used-->
+
+<!--=======================================================================-->
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation"><!--Added Landmarks-->
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html#page-top"><span id="header-name">Ridhima Gupta</span><span id = "header-tag">   / UX Designer </span></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul id="float" class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li>
+                        <a class="page-scroll" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about.html">About Me</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- =========About Section============= -->
+
+    <section id="contact" class="contact-section" role="About me section"><!--Added Landmarks-->
+            <div class="container">
+                <div class="row">
+                    <div class = "col-md-4">
+                        <br/>
+                    </div>
+                    <div class ="col-md-4 align-center">
+                    <br/><br/><br/>
+                        <img src="images/RidhimaGupta.png" alt="Ridhima Gupta profile picture"> <!--Included Alt text on each image-->
+                        <h1>Hi there!</h1>
+                        <p>I am Ridhima Gupta, an architect turned User Experience Designer with 3+ years of design experience with industry leaders and startups. I love problem solving and making the world a better place, one pixel at a time.
+                        <!-- Got an idea for a project or just want to say hi! -
+                        <a href="mailto:ridhimagupta@gatech.edu"><span class ="highlight">Email me</span></a> -->
+                        <br/>
+                    </div>
+                    <div class = "col-md-4">
+                        <br/>
+                    </div>
+                </div>
+
+                </div><!-- end of row -->
+            <!-- </div> <!-- end of container -->
+        <!-- </header> -->
+    </section> <!-- end of section -->
+
+
+     <!-- Full Width Image Header -->
+    <!--<header class="header-image">
+        <div class="headline">
+            <div class="container text-center">
+                <div class="col-lg-3"></br>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Hi! I am Ridhima Gupta. </br> <span id="hero-tag"> A UX Designer.</span>
+                        </br></br>
+                    <a class="btn btn-default page-scroll" href="#services">View Projects</a>
+                    </h3>
+                </div>
+                <div class="col-lg-3"></br>
+                </div>
+            </div>
+        </div>
+    </header>
+-->
+
+    <!-- ==============Projects Section=========== -->
+
+    <section id="services" class="services-section" role="Projects section"><!--Added Landmarks-->
+        <!-- <div class="container"> -->
+        <!-- <h1 class="page-title">Projects</h1>  -->
+        <!-- Page Header -->
+        <div class="row">
+
+            <div class="col-md-4 portfolio-item">
+                <a href="mayo.html">
+                    <img class="img-responsive" src="mayo/mayo_cover.png" alt="Mayo Clinic Project"> <!--Included Alt text on each image-->
+                </a>
+                <h3 class = "text-center">
+                    <a href="mayo.html">Mayo Clinic: Decision Aid</a>
+                </h3>
+                <p class = "description">App Design | User Research</p>
+            </div>
+
+            <div class="col-md-4 portfolio-item">
+                <a href="piab.html">
+                    <img class="img-responsive" src="piab/piab_cover.jpg" alt="PIAB"> <!--Included Alt text on each image-->
+                </a>
+                <h3 class = "text-center">
+                    <a href="bb.html">Particle in a Box</a>
+                </h3>
+                <p class ="description">Vizualization | Game Design</p>
+            </div>
+
+
+            <div class="col-md-4 portfolio-item">
+                <a href="freeads.html">
+                    <img class="img-responsive" src="freeads/freeads_cover2.jpg" alt="Freeads project picture to navigate to project page"> <!--Included Alt text on each image-->
+                </a>
+                <h3 class = "text-center ">
+                    <a href="freeads.html">Freeads</a>
+                </h3>
+                <p class ="description">Redesign | Product Strategy | Visual Design</p>
+            </div>
+
+        </div><!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="delta.html">
+                    <img class="img-responsive" src="delta/delta_cover.png" alt="Delta Tciket Re-design"> <!--Included Alt text on each image-->
+                </a>
+                <h3 class = "text-center">
+                    <a href="delta.html">Delta Ticket Redesign</a>
+                </h3>
+                <p class ="description">Visual Design | Product Design</p>
+            </div>
+
+            <div class="col-md-4 portfolio-item">
+                <a href="bb.html">
+                    <img class="img-responsive" src="bb/bb_cover.jpg" >
+                </a>
+                <h3 class = "text-center">
+                    <a href="bb.html">Bloomberg</a>
+                </h3>
+                <p class ="description">Product stategy | User Research</p>
+            </div>
+
+            <div class="col-md-4 portfolio-item"> <!-- grid layout 1-->
+                <a href="askme.html">
+                    <img class="img-responsive" src="askme/askme_cover.png" alt="Ask me project picture to navigate to inner page"> <!--Included Alt text on each image-->
+                </a>
+                <h3 class = "text-center">
+                    <a href="askme.html">Ask Me</a>
+                </h3>
+                <p class ="description">Redesign | Product Strategy</p>
+            </div>
+
+        </div><!-- /.row -->
+
+        <!-- </div><!-- /.container -->
+    </section>
+
+    <!-- =============Resume Section============ -->
+    <section id="about" class="about-section" role="Resume"><!--Added Landmarks-->
+        <div class="container">
+            <h1 class="text-center page-title">Resume</h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-8 col-md-8 col-xs-12"> <!-- grid layout 2-->
+                        <h3>Professional Experience</h3>
+                        <hr> <!--Bootstrap line seperator used-->
+                        <p class ="portfolio-heading"> Bloomberg LP<span> / Interaction Design Intern</span><p>
+                        <p class = "portfolio-subheading">June 2015 – Aug 2015 / New York City, USA<p>
+                        <p class =" portfolio-text">Conducted user research on current practices of quantitative research in Bloomberg UX team, using semi-structured interviews with 12 participants. Formulated design strategy for an analytics tool based on user research findings to be used by user experience, product and sales divisions. The designs are used as a basis for the design of a flagship internal Bloomberg product.<p>
+
+                        <p class ="portfolio-heading"> Georgia Institute of Technology <span>/ Graduate Research Assistant</span><p>
+                        <p class = "portfolio-subheading">Aug 2014 – Present / Atlanta, USA<p>
+                        <p class =" portfolio-text">Managing a cross-disciplinary team of designers, engineers and developers in the Design and Social Interaction Studio, to design and implement a learning aid for quantum mechanics. Handled branding collaterals for web/print media for six departments under Ivan Allen College of Liberal Arts.<p>
+
+                        <p class ="portfolio-heading"> Design for Use <span>/ User Experience Intern</span><p>
+                        <p class = "portfolio-subheading">Jan 2014 – July 2014 / New Delhi, India<p>
+                        <p class =" portfolio-text">Mapped user journeys, conducted user research and conceptualized design strategy for UX redesign of two of India’s largest consumer facing products.<p>
+
+
+                        <p class ="portfolio-heading"> Formworks Architecture <span>/ Intern</span><p>
+                        <p class = "portfolio-subheading">May 2012 – July 2012 / Perth, Australia<p>
+                        <p class =" portfolio-text">Worked on adaptive reuse project of an office building, using BIM and Revit Architecture. Worked towards accessible design and minimizing project costs. Also prepared architecture drawings for two public schools for the Australian aboriginal population.<p>
+
+                        <p class ="portfolio-heading"> Ridhimagupta.in<p>
+                        <p class = "portfolio-subheading">May 2011 – Present / Roorkee, India<p>
+                        <p class =" portfolio-text">Managed a wide variety of cross-media projects involving branding, UI design, front-end development for startups.<p>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <h3>Education</h3>
+                        <hr>
+                        <p class ="portfolio-heading">Georgia Institute of Technology</p>
+                        <p class = "portfolio-subheading">Aug 2014 – May 2016 / Atlanta, USA<p>
+                        <p class = "portfolio-text">MS - Human Computer Interaction<p>
+
+
+                        <p class ="portfolio-heading">IIT Roorkee</p>
+                        <p class = "portfolio-subheading">Aug 2007 – May 2012 / Roorkee, India<p>
+                        <p class = "portfolio-text">Bachelor of Architecture<p>
+
+
+                        <!-- <h3>Skills</h3>
+                        <hr>
+                        <p class ="portfolio-heading"><span>Design</span>
+                        <p class =" portfolio-text">Heuristic Evaluation, Competitive Analysis, Contextual Inquiry, Usability Testing and Evaluation, Affinity Diagraming, Storyboarding, Concept Sketching, Requirement Gathering, Wireframing, Rapid Prototyping, Visual Design, Motion Design, Data Visualization</p>
+                        <p class ="portfolio-heading"><span>Languages</span>
+                        <p class =" portfolio-text">HTML5, CSS3, JS, jQuery</p>
+                        <p class ="portfolio-heading"><span>Software</span>
+                        <p class =" portfolio-text">Sketch, Framer, Photoshop, Illustrator, InDesign, AfterEffects, Axure, Omnigraffle, Invision, Form, Unity</p> -->
+
+                        <h3>Notables</h3>
+                        <hr>
+                        <p class ="portfolio-heading">MS-HCI Council Leader</p>
+                        <p class =" portfolio-text">Heading MS-HCI graduate council (May 2015 - present)</p>
+                        <p class ="portfolio-heading">Grace Hopper Scholar</p>
+                        <p class =" portfolio-text">Scholarship by Anita Borg Institute (2015)</p>
+                        <p class ="portfolio-heading">GLS 11</p>
+                        <p class =" portfolio-text">Presented research paper at GLS 11 at University of Wisconsin, Maddison (2015)</p>
+                        <p class ="portfolio-heading">Creative Design Award</p>
+                        <p class =" portfolio-text">Shalini and Shamsher Prakash award for creative design (2014)</p>
+                        <p class ="portfolio-heading">Design Manager</p>
+                        <p class =" portfolio-text">Cognizance, India’s second largest college technical festival (2013)</p>
+
+                    </div>
+                </div><!-- end of col-lg-12-->
+            </div> <!-- end of row -->
+            <div class = "row">
+                <br/><br/>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-12 text-center">
+
+                <a class="btn btn-default " href="docs/Ridhima_resume.pdf" target="_blank"><i class="fa fa-download"></i>  Download Resume</a> <!--Avoid ambigious buttons-->
+
+                <br/><br/>
+                </div><!-- end of col-lg-12-->
+            </div> <!-- end of row -->
+            <div class="row">
+            <br/><br/><br/>
+            </div><!-- end of row -->
+
+        </div><!-- end of container-->
+    </section>
+
+
+
+    <!-- ===========Footer Section============== -->
+
+    <section id="footer" class="footer-section" role="Footer"><!--Added Landmarks-->
+    <div class="container">
+        <div class="row">
+        <br/>
+            <div class="col-lg-12 text-center">
+
+                    <a href="https://www.linkedin.com/in/ridhimagupta26"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://github.gatech.edu/rgupta94"><i class="fa fa-github"></i></a>
+                    <a href="https://medium.com/@ridhimagupta"><i class="fa fa-medium"></i></a>
+                    <a href="https://twitter.com/ridhimagupta"><i class="fa fa-twitter"></i></a>
+            </div>
+         </div>
+         <br/>
+        <div class="row text-center">
+                    <p>Copyright &copy; 2015 - Ridhima Gupta<br/>Coded with <i class="fa fa-heart"></i></p><br/>
+        </div>
+    </div><!-- end of container-->
+    </section>
+
+
+    <!-- ==============jQuery============== -->
+
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- =============Scrolling Nav JavaScript=============-->
+
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64261420-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
