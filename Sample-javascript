@@ -1,0 +1,11 @@
+<!Doctype HTML>
+<HTML>
+<BODY>
+<p id="Demo"></p>
+</BODY>
+<script>
+var Yo=50;
+document.getElementById("Demo").innerHTML = Yo*2 ;
+
+</script>
+</HTML>
